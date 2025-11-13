@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/ui.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/responsive.css'%}">
+</head>
+<body>
+    {% include "home/navbar.html" %}
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-3">
+                <div class="card products-grid">
+                    <a href="#" class="img-wrap">
+                        <img src="{{product.image.url}}">
+                    </a>
+                    <figcaption class="info-wrap">
+                        <a href="#" class="title-product">
+                            {{product.name}}
+                        </a>
+                        <div class="cost mt-1">
+                            ${{product.price}}
+                        </div>
+                         <p class="description-product">
+                            ${{product.description}}
+                        </p>
+                        
+                        
+
+
+                    </figcaption>
+
+                </div>
+
+            </div>
+        {%  endfor %}
+
+    </div>
+
+    <script src="{% static 'home/js/home.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hola Store xd</h1>
+    <span class="mr-md-auto"> Hay <b>{{counter_products}}</b> Resultados.</span>
+    <div class="row">
+      {% for product in products %}
+      <div class="col-md-3">
+        <div class="card card-product-grid bottom-wrap">
+          <a href="#" class="img-wrap">
+            <img src="{{product.image.url}}" alt="" />
+          </a>
+          <figcaption class="info-wrap">
+            <a href="#" class="title-product"> {{product.name}} </a>
+            <div class="price mt-1">${{product.cost}}</div>
+            <p class="description-product">{{product.description}}</p>
+          </figcaption>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
